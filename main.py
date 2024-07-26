@@ -35,7 +35,7 @@ ckeditor = CKEditor(app)
 Bootstrap5(app)
 
 # CREATE DATABASE
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///posts.db")
 db = SQLAlchemy(app)
 gravatar = Gravatar(app,
                     size=100,
